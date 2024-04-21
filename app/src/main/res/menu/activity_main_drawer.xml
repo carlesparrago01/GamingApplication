@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_games"
+            android:icon="@mipmap/controller_logo"
+            android:title="@string/menu_games" />
+        <item
+            android:id="@+id/nav_hall_of_name"
+            android:icon="@mipmap/hall_of_fame_logo"
+            android:title="@string/menu_hall_of_fame" />
+        <item
+            android:id="@+id/nav_upcoming"
+            android:icon="@mipmap/upcoming_logo"
+            android:title="@string/menu_upcoming" />
+    </group>
+</menu>

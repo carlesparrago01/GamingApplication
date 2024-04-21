@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_games">
+
+    <fragment
+        android:id="@+id/nav_games"
+        android:name="ph.com.carlesparrago.gamingApp.ui.games.GamesFragment"
+        android:label="@string/menu_games"
+        tools:layout="@layout/fragment_games" />
+
+    <fragment
+        android:id="@+id/nav_hall_of_name"
+        android:name="ph.com.carlesparrago.gamingApp.ui.hallOfFame.HallOfFameFragment"
+        android:label="@string/menu_hall_of_fame"
+        tools:layout="@layout/fragment_hall_of_fame" />
+
+    <fragment
+        android:id="@+id/nav_upcoming"
+        android:name="ph.com.carlesparrago.gamingApp.ui.upcoming.UpcomingFragment"
+        android:label="@string/menu_upcoming"
+        tools:layout="@layout/fragment_upcoming" />
+</navigation>
