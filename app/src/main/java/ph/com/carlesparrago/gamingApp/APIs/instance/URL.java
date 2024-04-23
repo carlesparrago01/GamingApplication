@@ -38,30 +38,5 @@ public class URL {
         return retrofit;
     }
 
-    public static Retrofit imageAPI(){
-        Retrofit retrofit = null;
-        Gson gson;
-
-        gson = new GsonBuilder()
-                .setLenient()
-                .create();
-
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
-                .readTimeout(2, TimeUnit.MINUTES)
-                .connectTimeout(2, TimeUnit.MINUTES);
-
-
-        httpClient.addInterceptor(logging);
-
-        retrofit = new Retrofit.Builder()
-                .baseUrl(" https://img.opencritic.com/")
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .client(httpClient.build())
-                .build();
-        return retrofit;
-    }
 
 }

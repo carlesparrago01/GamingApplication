@@ -6,37 +6,22 @@ public class Images {
 
     @SerializedName("banner")
     Banner banner;
+    @SerializedName("box")
+    Box box;
 
     public Images(Banner banner) {
         this.banner = banner;
+    }
+
+    public Images(Box box){
+        this.box = box;
     }
 
     public Banner getBanner() {
         return banner;
     }
 
-    static class Banner{
-        @SerializedName("og")
-        String og;
-        @SerializedName("sm")
-        String sm;
-
-        public Banner(String og, String sm) {
-            this.og = og;
-            this.sm = sm;
-        }
-
-        public String getOg() {
-            return og;
-        }
-
-        public String getSm() {
-            return sm;
-        }
+    public Box getBox() {
+        return box;
     }
-
-    static class Box{
-
-    }
-
 }
