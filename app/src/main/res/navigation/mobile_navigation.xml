@@ -22,4 +22,12 @@
         android:name="ph.com.carlesparrago.gamingApp.ui.upcoming.UpcomingFragment"
         android:label="@string/menu_upcoming"
         tools:layout="@layout/fragment_upcoming" />
+
+    <fragment
+        android:id="@+id/nav_game"
+        android:name="ph.com.carlesparrago.gamingApp.ui.game.GameFragment"
+        android:label="@string/game"
+        tools:layout="@layout/fragment_game"> />
+    </fragment>
+
 </navigation>

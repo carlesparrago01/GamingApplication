@@ -1,5 +1,6 @@
 package ph.com.carlesparrago.gamingApp.APIs.repositories;
 
+import java.util.List;
 
 import okhttp3.ResponseBody;
 import ph.com.carlesparrago.gamingApp.APIs.POJO.response.GameResponse;
@@ -12,31 +13,30 @@ import retrofit2.Response;
 
 public class GameRepository {
 
-    public void getGames(IGames iGames){
+    public void getGame(int id, IGame iGame){
         APIServices apiServices = URL.baseAPI().create(APIServices.class);
-        Call<GameResponse> gameResponseCall = apiServices.gameResponse(APIConstants.key, APIConstants.host);
+        Call<GameResponse> gameResponseCall = apiServices.gameResponse(APIConstants.key, APIConstants.host, id);
         gameResponseCall.enqueue(new Callback<GameResponse>() {
             @Override
             public void onResponse(Call<GameResponse> call, Response<GameResponse> response) {
                 if(response.isSuccessful()){
-                    iGames.onResponse(response.body());
+                    iGame.onResponse(response.body());
                 }else{
-                    iGames.onFailure(response.errorBody());
+                    iGame.onFailure(response.errorBody());
                 }
             }
 
             @Override
             public void onFailure(Call<GameResponse> call, Throwable t) {
-                iGames.onThrowable(t.getMessage());
+                iGame.onThrowable(t.getMessage());
             }
         });
 
     }
 
-    public interface IGames{
+    public  interface IGame{
         void onResponse(GameResponse gameResponse);
         void onFailure(ResponseBody errorBody);
         void onThrowable(String message);
     }
-
 }

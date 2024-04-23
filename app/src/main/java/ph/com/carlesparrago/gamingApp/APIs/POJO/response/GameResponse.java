@@ -25,8 +25,12 @@ public class GameResponse {
     Images images;
     @SerializedName("Platforms")
     List<Platform>platforms;
+    @SerializedName("firstReleaseDate")
+    String firstReleaseDate;
+    @SerializedName("description")
+    String description;
 
-    public GameResponse(int id, String name, double percentRecommended, int numReviews, double topCriticScore, String tier, Images images, List<Platform> platforms) {
+    public GameResponse(int id, String name, double percentRecommended, int numReviews, double topCriticScore, String tier, Images images, List<Platform> platforms, String firstReleaseDate, String description) {
         this.id = id;
         this.name = name;
         this.percentRecommended = percentRecommended;
@@ -35,6 +39,8 @@ public class GameResponse {
         this.tier = tier;
         this.images = images;
         this.platforms = platforms;
+        this.firstReleaseDate = firstReleaseDate;
+        this.description = description;
     }
 
     public int getId() {
@@ -67,5 +73,13 @@ public class GameResponse {
 
     public List<Platform> getPlatforms() {
         return platforms;
+    }
+
+    public String getFirstReleaseDate() {
+        return firstReleaseDate;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
